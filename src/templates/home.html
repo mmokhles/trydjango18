@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block head_title %}Welcome | {{block.super}}{% endblock %}
+
+<style>
+{% block style %}
+
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+<div class="jumbotron">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Try Django 1.8</h1>
+          <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+          <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Join Us &raquo;</a>
+        </div>
+        <div class="col-sm-6" style="background-color:black; height:300px;">
+        </div>
+      </div>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="col-sm-3 pull-right">
+        <p class="lead text-align-center">{{ title }}</p>
+
+        <form method="post" action="">{% csrf_token %}
+        {{ form|crispy }}
+
+        <input class='btn btn-primary' type="submit" value="Sign Up"/>
+
+        </form>
+    </div>
+
+    <div class="col-sm-3">
+        <p class="lead text-align-center">Built with bootstrap & Django<P>
+    </div>
+
+    <div class="col-sm-3">
+        <p class="lead text-align-center">Created for starters of all kinds.<P>
+    </div>
+
+    <div class="col-sm-3">
+        <p class="lead text-align-center">Always Open Source.<P>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
